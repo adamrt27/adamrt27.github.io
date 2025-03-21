@@ -1,397 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Adam Taback</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS for the '3 Col Portfolio' Template -->
-    <link href="css/3-col-portfolio.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="https://github.com/adamrt27">GitHub Profile</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="https://adamrt27.github.io/Resume_AI_New (14).pdf">CV/Resume</a></li>
-            <li><a href="https://www.linkedin.com/in/adam-taback/">LinkedIn</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam Taback</title>
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Animate.css for entrance animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- AOS CSS for scroll animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    /* Navigation */
+    .navbar {
+      background-color: #004200 !important;  /* Forest green background */
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;  /* Keep navbar links white */
+    }
+    .navbar .nav-link:hover {
+      color: #ccc !important;
+    }
+    .navbar-brand:hover {
+      color: #ccc !important;
+    }
+    /* Hero Section */
+    .hero-section {
+      background: url('https://boundless.utoronto.ca/wp-content/uploads/give/Give@2x.jpg') center center/cover no-repeat;
+      height: 400px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    /* Section Styling */
+    .section {
+      padding: 60px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    /* Portfolio Items */
+    .portfolio-item {
+      margin-bottom: 30px;
+      transition: transform 0.15s ease;
+      padding: 10px;
+      border-radius: 15px;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.03) !important;
+      background-color: rgba(0, 0, 0, 0.04); /* subtle dark overlay */
+    }
+    /* Rounded Images & Spacing in Projects Section */
+    #projects .portfolio-item img {
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+    .github-icon {
+      width: 20px;
+      height: auto;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    /* Skills as Boxes using Badges */
+    .skills .badge {
+      font-size: 0.9rem;
+      background-color: #228B22 !important;  /* Forest green badges */
+    }
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+    }
+    /* Make project links forest green */
+    a {
+      color: #228B22 !important;
+    }
+    a:hover {
+      color: #196619 !important; /* A darker shade on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-
-      <div class="row">
-
-        <div class="col-lg-12">
-          <h1 class="page-header">Adam Taback <small></small></h1>
-        </div>
-
+      <a class="navbar-brand" href="https://github.com/adamrt27">
+        GitHub Profile
+        <img class="github-icon" src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="Github Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="color:#fff;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="https://adamrt27.github.io/Resume_Adam_Taback.pdf">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/adam-taback/">LinkedIn</a>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <div class="about-section">
-        <!--<h1>Who am I?</h1>-->
-        <p>I am a third year Electrical and Computer Engineering student at the University of Toronto, 
-          with an interest in Digital Design and Machine Learning. Outside
-          of school, my interests include playing violin, guitar and bass, reading and working out.
-        </p>
-      </div>
-      <!-- <div class="row">
-        <div class="col-lg-12">
-          <h2 class="page-header">Projects <small></small></h2>
-        </div>
-      </div> -->
-      
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content" data-aos="fade-down">
+      <h1 class="display-3">Adam Taback</h1>
+      <p class="lead">3rd Computer Engineering Student @ University of Toronto</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container" data-aos="fade-up">
       <div class="row">
-        
+        <div class="col-lg-12">
+          <h2 class="section-header">About Me</h2>
+          <p>I am a 3rd Computer Engineering student at the University of Toronto, with an interest in Digital Design and Machine Learning. Outside of school, my interests include playing violin, guitar and bass, reading and working out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <h1>Projects</h1>
-          <!-- Add your CSS styling here -->
-          <style>
-              .github-icon {
-                  width: 20px; /* Adjust the size as needed */
-                  height: auto;
-                  vertical-align: middle; /* Align the image vertically with the text */
-                  margin-left: 5px; /* Add some space between the text and the icon */
-              }
-          </style>
-      </head>
-      <body>
-        <div class="row">
-          <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/PyPI_logo.svg/640px-PyPI_logo.svg.png">
-            </a>
-            <h3>
-              <a href="https://pypi.org/project/tANS-py/">
-                Python Package: tANS-py
-                <img class="github-icon" src="https://raw.githubusercontent.com/github/explore/666de02829613e0244e9441b114edb85781e972c/topics/pip/pip.png" alt="PyPi Logo">
-              </a>
-            </h3>
-            <p>This is a python package, which implements <a href="https://arxiv.org/abs/1311.2540">Asymmetric Numeral Systems</a>, an Entropy compression technique. There is a python implementation, as well as an optimized C implementation that uses bitwise operations, tied into Python using CMake. See the <a href="https://github.com/adamrt27/tANS_py">repo</a> for more details.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Python, C, CMake, Bitwise Optimization</li>
-              <li>Compression Techniques</li>
-              <li>PyPi, Python Package Development</li>
-            </ul>
-          </div>
-          <!-- <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px;" src="https://pub.mdpi-res.com/entropy/entropy-24-00375/article_deploy/html/images/entropy-24-00375-g001.png?1646816441">
-            </a>
-            <h3>
-              <a href="https://github.com/adamrt27/ANS_NeuralComp">
-                Asymmetric Numeral Systems for Neural Compression
-                <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-              </a>
-            </h3>
-            <p>This repository contains code testing Asymmetric Numeral Systems Compression on Deep learning models. See the Repo for more details.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Neural Compression</li>
-              <li>Python</li>
-              <li>Compression Techniques</li>
-              <li>Pytorch</li>
-            </ul>
-          </div> -->
-          <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px;" src="https://github.com/adamrt27/CPU_FPGA/raw/main/readme/Project-7.jpg">
-            </a>
-            <h3>
-              <a href="https://github.com/adamrt27/CPU_FPGA/tree/main">
-                ECE243 Final Project: Processor in Verilog
-                <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-              </a>
-            </h3>
-            <p>This repository contains Verilog code from my final project for ECE243 (Computer Organization). I created a processor and an associated assembly language in Verilog. See the repository for more information.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Verilog and FPGA</li>
-              <li>Digital RTL Design</li>
-              <li>Assembly Language</li>
-              <li>Quartus and Modelsim</li>
-            </ul>
-          </div>
-        <div class="col-md-4 portfolio-item">
-          <a href="#project-link">
-            <img class="img-responsive" style="width: 400px; height: 200px; object-fit: cover;" src="https://github.com/adamrt27/Cartoon_Gen/raw/main/vae_training_animation.gif">          </a>
+  <!-- Projects Section -->
+  <section class="section bg-light" id="projects">
+    <div class="container">
+      <h2 class="section-header" data-aos="fade-up">Projects</h2>
+      <!-- First Row of 3 Projects -->
+      <div class="row">
+        <!-- Project 1: Python Package: tANS-py -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in">
+          <a href="https://pypi.org/project/tANS-py/">
+            <img class="img-fluid" style="width: 400px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/PyPI_logo.svg/640px-PyPI_logo.svg.png" alt="PyPI Logo">
+          </a>
           <h3>
-            <a href="https://github.com/adamrt27/GAN_Proj/tree/main">
-              Generating Images using Generative Adversarial Networks
+            <a href="https://pypi.org/project/tANS-py/">
+              Python Package: tANS-py
+              <img class="github-icon" src="https://raw.githubusercontent.com/github/explore/666de02829613e0244e9441b114edb85781e972c/topics/pip/pip.png" alt="PyPI Logo">
+            </a>
+          </h3>
+          <p>This package implements <a href="https://arxiv.org/abs/1311.2540">Asymmetric Numeral Systems</a>, an entropy compression technique. It includes both a Python implementation and an optimized C implementation (integrated via CMake). See the <a href="https://github.com/adamrt27/tANS_py">repo</a> for details.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Python</span>
+            <span class="badge bg-primary me-1 mb-1">C</span>
+            <span class="badge bg-primary me-1 mb-1">CMake</span>
+            <span class="badge bg-primary me-1 mb-1">Bitwise Optimization</span>
+            <span class="badge bg-primary me-1 mb-1">Compression Techniques</span>
+            <span class="badge bg-primary me-1 mb-1">PyPi</span>
+            <span class="badge bg-primary me-1 mb-1">Package Dev</span>
+          </div>
+        </div>
+        <!-- Project 2: ECE243 Final Project: Processor in Verilog -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+          <a href="https://github.com/adamrt27/CPU_FPGA/tree/main">
+            <img class="img-fluid" style="width: 400px; height: 200px;" src="https://github.com/adamrt27/CPU_FPGA/raw/main/readme/Project-7.jpg" alt="Processor in Verilog">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/CPU_FPGA/tree/main">
+              ECE243 Final Project: Processor in Verilog
               <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
             </a>
           </h3>
-          <p>This repository contains my code from the final Project for APS360, where I created a Generative Adversarial network for image generation.</p>
+          <p>This repository contains Verilog code from my final project for ECE243 (Computer Organization). I created a processor and an associated assembly language in Verilog. See the repo for details.</p>
           <h4>Skills</h4>
-          <ul>
-            <li>Python</li>
-            <li>Pytorch</li>
-            <li>Pandas, Numpy, Matplotlib</li>
-            <li>Neural Networks, Generative Model, GANs, Computer Vision</li>
-          </ul>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Verilog</span>
+            <span class="badge bg-primary me-1 mb-1">FPGA</span>
+            <span class="badge bg-primary me-1 mb-1">Digital RTL Design</span>
+            <span class="badge bg-primary me-1 mb-1">Assembly</span>
+            <span class="badge bg-primary me-1 mb-1">Quartus</span>
+            <span class="badge bg-primary me-1 mb-1">Modelsim</span>
+          </div>
         </div>
-      
-        <div class="row">
-          
-          <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px;object-fit: cover;" src="https://media.healthdirect.org.au/images/inline/original/about-the-placenta-22ab19.png">
+        <!-- Project 3: Generating Images using Variation Autoencoders -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://github.com/adamrt27/GAN_Proj/tree/main">
+            <img class="img-fluid" style="width: 400px; height: 200px; object-fit: cover;" src="https://github.com/adamrt27/Cartoon_Gen/raw/main/vae_training_animation.gif" alt="GAN Project">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/GAN_Proj/tree/main">
+              Generating Images using Variation Autoencoders
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
             </a>
-            <h3>
-              <a href="https://github.com/adamrt27/PlacentaCNN/tree/main">
-                Classification of Images of Placentae using Pretrained CNNs
-                <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-              </a>
-            </h3>
-            <p>This repo contains code for classification of placenta images using CNNs. Achieved an AUROC of ~0.90.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Python</li>
-              <li>Pytorch, Numpy, Pandas</li>
-              <li>Neural Networks, Computer Vision, Pretrained Models, Image Classification</li>
-              <li>High Performance Computer</li>
-            </ul>
+          </h3>
+          <p>This repository contains my code from the final project for APS360, where I developed a GAN for image generation.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Python</span>
+            <span class="badge bg-primary me-1 mb-1">Pytorch</span>
+            <span class="badge bg-primary me-1 mb-1">Pandas</span>
+            <span class="badge bg-primary me-1 mb-1">Numpy</span>
+            <span class="badge bg-primary me-1 mb-1">Matplotlib</span>
+            <span class="badge bg-primary me-1 mb-1">Neural Networks</span>
+            <span class="badge bg-primary me-1 mb-1">VAE/GAN</span>
+            <span class="badge bg-primary me-1 mb-1">Computer Vision</span>
           </div>
-          <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px;" src="https://github.com/adamrt27/ECE241_Synth/blob/main/Screenshot%202023-12-30%20at%206.11.24%20PM.png?raw=true">
+        </div>
+      </div>
+      <!-- Second Row of 3 Projects -->
+      <div class="row mt-4">
+        <!-- Project 4: Classification of Placenta Images using CNNs -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in">
+          <a href="https://github.com/adamrt27/PlacentaCNN/tree/main">
+            <img class="img-fluid" style="width: 400px; height: 200px; object-fit: cover;" src="https://media.healthdirect.org.au/images/inline/original/about-the-placenta-22ab19.png" alt="Placenta CNN">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/PlacentaCNN/tree/main">
+              Classification of Images of Placentae using Pretrained CNNs
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
             </a>
-            <h3>
-              <a href="https://github.com/adamrt27/ECE241_Synth/tree/main">
-                ECE241 Final Project: Musical Synthesizer
-                <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-              </a>
-            </h3>
-            <p>This repository contains Verilog code from my final project for ECE241 (Digital Systems). My group created a musical synthesizer on an FPGA. See the repository for more info.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Verilog and FPGA</li>
-              <li>Quartus and Modelsim</li>
-              <li>Digital Signal Processing</li>
-            </ul>
+          </h3>
+          <p>This repo contains code for classifying placenta images using CNNs. Achieved an AUROC of ~0.90.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Python</span>
+            <span class="badge bg-primary me-1 mb-1">Pytorch</span>
+            <span class="badge bg-primary me-1 mb-1">Numpy</span>
+            <span class="badge bg-primary me-1 mb-1">Pandas</span>
+            <span class="badge bg-primary me-1 mb-1">Neural Networks</span>
+            <span class="badge bg-primary me-1 mb-1">Computer Vision</span>
+            <span class="badge bg-primary me-1 mb-1">Pretrained Models</span>
+            <span class="badge bg-primary me-1 mb-1">Image Classification</span>
           </div>
-          <div class="col-md-4 portfolio-item">
-            <a href="#project-link">
-              <img class="img-responsive" style="width: 400px; height: 200px; object-fit: cover;" src="https://miro.medium.com/max/561/0*ff7kw5DRQbs_uixR.jpg">
+        </div>
+        <!-- Project 5: ECE241 Final Project: Musical Synthesizer -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+          <a href="https://github.com/adamrt27/ECE241_Synth/tree/main">
+            <img class="img-fluid" style="width: 400px; height: 200px;" src="https://github.com/adamrt27/ECE241_Synth/blob/main/Screenshot%202023-12-30%20at%206.11.24%20PM.png?raw=true" alt="Musical Synthesizer">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ECE241_Synth/tree/main">
+              ECE241 Final Project: Musical Synthesizer
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
             </a>
-            <h3>
-              <a href="https://github.com/adamrt27/RiskStratificationPreeclampsia">
-                Risk Stratification for Improved Preeclampsia Prediction by Leveraging Unsupervised Machine Learning
-                <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-              </a>
-            </h3>
-            <p>This repository contains my code from the summer 2023 research project I completed with Dr. Brian Cox.</p>
-            <h4>Skills</h4>
-            <ul>
-              <li>Python, Pandas, Numpy, SciKit Learn, Scipy</li>
-              <li>High Performance Computing</li>
-              <li>Python Package Development</li>
-              <li>Unsupervised Learning/Clustering Analysis</li>
-            </ul>
+          </h3>
+          <p>This repository contains Verilog code from my final project for ECE241 (Digital Systems). My group created a musical synthesizer on an FPGA.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Verilog</span>
+            <span class="badge bg-primary me-1 mb-1">FPGA</span>
+            <span class="badge bg-primary me-1 mb-1">Quartus</span>
+            <span class="badge bg-primary me-1 mb-1">Modelsim</span>
+            <span class="badge bg-primary me-1 mb-1">Digital Signal Processing</span>
           </div>
         </div>
-      </body>
-      
-      
-      
-      
-      </html>
-
-      <!DOCTYPE html>
-      <html>
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <h1>Coursework</h1>
-          <!-- Add your CSS styling here -->
-          <style>
-              .github-icon {
-                  width: 20px; /* Adjust the size as needed */
-                  height: auto;
-                  vertical-align: middle; /* Align the image vertically with the text */
-                  margin-left: 5px; /* Add some space between the text and the icon */
-              }
-          </style>
-      </head>
-      <body>
-        
-      <div class="row">
-        <div class="col-md-4 portfolio-item">
-              <a href="#project-link"><img class="img-responsive" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png"></a>
-              <h3>
-                  <a href="https://github.com/adamrt27/ECE243">
-                      ECE243<img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-                  </a>
-              </h3>
-              <p>Computer Organization, Winter 2024. This repository contains my labs from the course.</p>
-              <h4>Skills</h4>
-              <ul>
-                  <li>Assembly (Nios II)</li>
-                  <li>Digital RTL Design</li>
-                  <li>C (Embedded Systems)</li>
-                  <li>Verilog</li>
-                  <!-- Add more skills as needed -->
-              </ul>
-            </div>  
-        <div class="col-md-4 portfolio-item">
-              <a href="#project-link"><img class="img-responsive" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png"></a>
-              <h3>
-                  <a href="https://github.com/adamrt27/ECE244">
-                      ECE244<img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-                  </a>
-              </h3>
-              <p>Programming Fundamentals, Fall 2023. This repository contains my labs from the course.</p>
-              <h4>Skills</h4>
-          <ul>
-              <li>C++</li>
-              <li>Object Oriented Programming</li>
-              <!-- Add more skills as needed -->
-          </ul>
-            </div>
-
-        <div class="col-md-4 portfolio-item">
-              <a href="#project-link"><img class="img-responsive" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png"></a>
-              <h3>
-                  <a href="https://github.com/adamrt27/ECE244">
-                      ECE241<img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-                  </a>
-              </h3>
-              <p>Digital Systems, Fall 2023. This repository contains my labs from the course.
-                </p>
-                <h4>Skills</h4>
-          <ul>
-              <li>Verilog</li>
-              <li>Quartus</li>
-              <li>Modelsim</li>
-              <li>Digital Logic and Design</li>
-              <!-- Add more skills as needed -->
-          </ul>
+        <!-- Project 6: Ensemble Clustering for Preeclampsia Prediction -->
+        <div class="col-md-4 portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://github.com/adamrt27/RiskStratificationPreeclampsia">
+            <img class="img-fluid" style="width: 400px; height: 200px; object-fit: cover;" src="https://miro.medium.com/max/561/0*ff7kw5DRQbs_uixR.jpg" alt="Preeclampsia Prediction">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/RiskStratificationPreeclampsia">
+              Ensemble Clustering for Preeclampsia Prediction
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>This repository contains my code from the summer 2023 research project I completed with Dr. Brian Cox.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Python</span>
+            <span class="badge bg-primary me-1 mb-1">Pandas</span>
+            <span class="badge bg-primary me-1 mb-1">Numpy</span>
+            <span class="badge bg-primary me-1 mb-1">SciKit Learn</span>
+            <span class="badge bg-primary me-1 mb-1">Scipy</span>
+            <span class="badge bg-primary me-1 mb-1">HPC</span>
+            <span class="badge bg-primary me-1 mb-1">Package Dev</span>
+            <span class="badge bg-primary me-1 mb-1">Unsupervised Learning</span>
+            <span class="badge bg-primary me-1 mb-1">Clustering</span>
           </div>
-        
-          <div class="col-md-4 portfolio-item">
-              <a href="#project-link"><img class="img-responsive" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png"></a>
-              <h3>
-                  <a href="https://github.com/adamrt27/ESC180">
-                      ESC180<img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-                  </a>
-              </h3>
-              <p>Introduction to Computer Programming, Fall 2022. I am now a TA for this course, but I took it in 2022. This repository contains my projects
-                  from the course. Course website available <a href="https://www.cs.toronto.edu/~guerzhoy/180/">here</a>.</p>
-                  <h4>Skills</h4>
-                  <ul>
-                      <li>Python</li>                  
-                      <!-- Add more skills as needed -->
-                  </ul>
-                </div>
-      
-          <div class="col-md-4 portfolio-item">
-              <a href="#project-link"><img class="img-responsive" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png"></a>
-              <h3>
-                  <a href="https://github.com/adamrt27/ESC190">
-                      ESC190<img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
-                  </a>
-              </h3>
-              <p>Data Structures and Algorithms, Winter 2023. I am now a TA for this course, but I took it in 2023. This repository contains my projects
-                  from the course. Course website available <a href="https://www.cs.toronto.edu/~guerzhoy/190/">here</a>.</p>
-                  <h4>Skills</h4>
-                  <ul>
-                      <li>C</li>
-                      <li>Data Structures (Graphs, Stacks, Queues, Trees, ...)</li>
-                  <li> Time Complexity</li>
-                      <!-- Add more skills as needed -->
-                  </ul>
-                </div>
-      </div>
-            
-        
-        <!--
-        <div class="col-md-4 portfolio-item">
-          <a href="#project-link"><img class="img-responsive" src="http://placehold.it/700x400"></a>
-          <h3><a href="#project-link">Project Name</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
         </div>
-
-        <div class="col-md-4 portfolio-item">
-          <a href="#project-link"><img class="img-responsive" src="http://placehold.it/700x400"></a>
-          <h3><a href="#project-link">Project Name</a></h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div> -->
-
       </div>
+    </div>
+  </section>
 
-      <hr>
-<!--
-      <div class="row text-center">
-        
-        <div class="col-lg-12">
-          <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&raquo;</a></li>
-          </ul>        
-        </div>
-
-      </div>
-
-    </div><!-- /.container -->
-    <!--
+  <!-- Coursework Section -->
+  <section class="section" id="coursework">
     <div class="container">
-
-      <hr>
-
-      <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Copyright &copy; Company <span id="getCurrentDate"></span></p>
+      <h2 class="section-header" data-aos="fade-up">Coursework</h2>
+      <div class="row">
+        <!-- Coursework 1: ECE243 -->
+        <div class="col-md-4 portfolio-item" data-aos="flip-left">
+          <a href="https://github.com/adamrt27/ECE243">
+            <img class="img-fluid" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png" alt="ECE243">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ECE243">
+              ECE243
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>Computer Organization, Winter 2024. This repository contains my labs from the course.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Assembly (Nios II)</span>
+            <span class="badge bg-primary me-1 mb-1">Digital RTL Design</span>
+            <span class="badge bg-primary me-1 mb-1">C</span>
+            <span class="badge bg-primary me-1 mb-1">Verilog</span>
           </div>
         </div>
-      </footer>
-      
-    </div><!-- /.container -->
+        <!-- Coursework 2: ECE244 -->
+        <div class="col-md-4 portfolio-item" data-aos="flip-left" data-aos-delay="100">
+          <a href="https://github.com/adamrt27/ECE244">
+            <img class="img-fluid" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png" alt="ECE244">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ECE244">
+              ECE244
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>Programming Fundamentals, Fall 2023. This repository contains my labs from the course.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">C++</span>
+            <span class="badge bg-primary me-1 mb-1">OOP</span>
+          </div>
+        </div>
+        <!-- Coursework 3: ECE241 -->
+        <div class="col-md-4 portfolio-item" data-aos="flip-left" data-aos-delay="200">
+          <a href="https://github.com/adamrt27/ECE241">
+            <img class="img-fluid" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png" alt="ECE241">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ECE241">
+              ECE241
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>Digital Systems, Fall 2023. This repository contains my labs from the course.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Verilog</span>
+            <span class="badge bg-primary me-1 mb-1">Quartus</span>
+            <span class="badge bg-primary me-1 mb-1">Modelsim</span>
+            <span class="badge bg-primary me-1 mb-1">Digital Logic & Design</span>
+          </div>
+        </div>
+        <!-- Coursework 4: ESC180 -->
+        <div class="col-md-4 portfolio-item" data-aos="flip-left" data-aos-delay="300">
+          <a href="https://github.com/adamrt27/ESC180">
+            <img class="img-fluid" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png" alt="ESC180">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ESC180">
+              ESC180
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>Introduction to Computer Programming, Fall 2022. I am now a TA for this course, but I took it in 2022. This repository contains my projects from the course. Course website available <a href="https://www.cs.toronto.edu/~guerzhoy/180/">here</a>.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">Python</span>
+          </div>
+        </div>
+        <!-- Coursework 5: ESC190 -->
+        <div class="col-md-4 portfolio-item" data-aos="flip-left" data-aos-delay="400">
+          <a href="https://github.com/adamrt27/ESC190">
+            <img class="img-fluid" src="https://d3gec4yjx788g8.cloudfront.net/platform/3141/assets/logo.png" alt="ESC190">
+          </a>
+          <h3>
+            <a href="https://github.com/adamrt27/ESC190">
+              ESC190
+              <img class="github-icon" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub Logo">
+            </a>
+          </h3>
+          <p>Data Structures and Algorithms, Winter 2023. I am now a TA for this course, but I took it in 2023. This repository contains my projects from the course. Course website available <a href="https://www.cs.toronto.edu/~guerzhoy/190/">here</a>.</p>
+          <h4>Skills</h4>
+          <div class="skills">
+            <span class="badge bg-primary me-1 mb-1">C</span>
+            <span class="badge bg-primary me-1 mb-1">Data Structures</span>
+            <span class="badge bg-primary me-1 mb-1">Time Complexity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript">
-      var dt = new Date();
-      document.getElementById('getCurrentDate').innerHTML = dt.getFullYear();
-    </script>
-  </body>
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Adam Taback. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'slide', once: true });
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
