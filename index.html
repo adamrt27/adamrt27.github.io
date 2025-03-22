@@ -123,6 +123,124 @@
     a:hover {
       color: #196619 !important; /* A darker shade on hover */
     }
+    /* Skills Legend Styles */
+    .skills-legend-container {
+      margin-bottom: 2rem;
+    }
+
+    .skills-legend-container h5 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .skills-legend-container .badge {
+      font-size: 1rem;
+      padding: 0.6em 1.2em;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills-legend-container .badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Dropdown Card Styles */
+    #skillsDropdown {
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+    }
+
+    #skillsDropdown .card {
+      border: none;
+      border-radius: 15px;
+      background-color: #ffffff;
+    }
+
+    #skillsDropdown .card-body {
+      padding: 2rem;
+    }
+
+    #skillsDropdown h5 {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    #skillsDropdownList .badge {
+      font-size: 0.95rem;
+      padding: 0.5em 1.1em;
+      border-radius: 2rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .arrow-circle {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5em;
+      height: 1.5em;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      margin-left: 10px;
+      vertical-align: middle;
+      transition: transform 0.3s ease;
+    }
+    
+    .chevron {
+      width: 10px;
+      height: 10px;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-toggle-btn.active .chevron {
+      transform: rotate(90deg);
+    }
+
+    /* Category color-coded buttons */
+    .btn-lang {
+      border-color: #007bff;
+      color: #007bff;
+    }
+
+    .btn-lang:hover, .btn-lang.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .btn-tool {
+      border-color: #28a745;
+      color: #28a745;
+    }
+
+    .btn-tool:hover, .btn-tool.active {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    .btn-concept {
+      border-color: #fd7e14;
+      color: #fd7e14;
+    }
+
+    .btn-concept:hover, .btn-concept.active {
+      background-color: #fd7e14;
+      color: #fff;
+    }
+
+    .bg-skills {
+      background-color: #e9e9e9;
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+    
+    #skills + #projects {
+      margin-top: -20px; /* brings Projects section closer */
+    }
   </style>
 </head>
 <body>
@@ -169,6 +287,48 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section class="section bg-skills" id="skills">
+    <h2 class="section-header text-center" data-aos="fade-up">Skills</h2>
+    <!-- Skills Legend -->
+    <div class="skills-legend-container text-center" data-aos="fade-up">
+      <button id="btn-lang" class="btn skill-toggle-btn btn-lang" onclick="toggleSkills('lang')">
+        Languages
+        <span class="arrow-circle">
+          <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </span>
+      </button>
+      <button id="btn-tool" class="btn skill-toggle-btn btn-tool" onclick="toggleSkills('tool')">
+        Tools / Packages
+        <span class="arrow-circle">
+          <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </span>
+      </button>
+      <button id="btn-concept" class="btn skill-toggle-btn btn-concept" onclick="toggleSkills('concept')">
+        Concepts / Techniques
+        <span class="arrow-circle">
+          <svg class="chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <!-- Skills Dropdown Display -->
+    <div id="skillsDropdown" class="container mb-5" style="display: none;">
+      <div class="card">
+        <div class="card-body">
+          <h5 id="skillsDropdownTitle">Skills</h5>
+          <div id="skillsDropdownList" class="d-flex flex-wrap justify-content-center gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section class="section bg-light" id="projects">
     <div class="container">
@@ -192,9 +352,9 @@
             <span class="badge bg-primary me-1 mb-1">Python</span>
             <span class="badge bg-primary me-1 mb-1">C</span>
             <span class="badge bg-primary me-1 mb-1">CMake</span>
+            <span class="badge bg-primary me-1 mb-1">PyPi</span>
             <span class="badge bg-primary me-1 mb-1">Bitwise Optimization</span>
             <span class="badge bg-primary me-1 mb-1">Compression Techniques</span>
-            <span class="badge bg-primary me-1 mb-1">PyPi</span>
             <span class="badge bg-primary me-1 mb-1">Package Dev</span>
           </div>
         </div>
@@ -212,12 +372,12 @@
           <p>This repository contains Verilog code from my final project for ECE243 (Computer Organization). I created a processor and an associated assembly language in Verilog. See the repo for details.</p>
           <h4>Skills</h4>
           <div class="skills">
-            <span class="badge-lang bg-primary me-1 mb-1">Verilog</span>
-            <span class="badge-lang bg-primary me-1 mb-1">Assembly</span>
-            <span class="badge-concept bg-primary me-1 mb-1">Digital RTL Design</span>
-            <span class="badge-tool bg-primary me-1 mb-1">FPGA</span>
-            <span class="badge-tool bg-primary me-1 mb-1">Quartus</span>
-            <span class="badge-tool bg-primary me-1 mb-1">Modelsim</span>
+            <span class="badge bg-primary me-1 mb-1">Verilog</span>
+            <span class="badge bg-primary me-1 mb-1">Assembly</span>
+            <span class="badge bg-primary me-1 mb-1">FPGA</span>
+            <span class="badge bg-primary me-1 mb-1">Quartus</span>
+            <span class="badge bg-primary me-1 mb-1">Modelsim</span>
+            <span class="badge bg-primary me-1 mb-1">Digital RTL Design</span>
           </div>
         </div>
         <!-- Project 3: Generating Images using Variation Autoencoders -->
@@ -234,7 +394,7 @@
           <p>This repository contains my code from the final project for APS360, where I developed a GAN for image generation.</p>
           <h4>Skills</h4>
           <div class="skills">
-            <span class="badge-lang bg-primary me-1 mb-1">Python</span>
+            <span class="badge bg-primary me-1 mb-1">Python</span>
             <span class="badge bg-primary me-1 mb-1">Pytorch</span>
             <span class="badge bg-primary me-1 mb-1">Pandas</span>
             <span class="badge bg-primary me-1 mb-1">Numpy</span>
@@ -265,9 +425,9 @@
             <span class="badge bg-primary me-1 mb-1">Pytorch</span>
             <span class="badge bg-primary me-1 mb-1">Numpy</span>
             <span class="badge bg-primary me-1 mb-1">Pandas</span>
+            <span class="badge bg-primary me-1 mb-1">Pretrained Models</span>
             <span class="badge bg-primary me-1 mb-1">Neural Networks</span>
             <span class="badge bg-primary me-1 mb-1">Computer Vision</span>
-            <span class="badge bg-primary me-1 mb-1">Pretrained Models</span>
             <span class="badge bg-primary me-1 mb-1">Image Classification</span>
           </div>
         </div>
@@ -311,7 +471,7 @@
             <span class="badge bg-primary me-1 mb-1">Numpy</span>
             <span class="badge bg-primary me-1 mb-1">SciKit Learn</span>
             <span class="badge bg-primary me-1 mb-1">Scipy</span>
-            <span class="badge bg-primary me-1 mb-1">HPC</span>
+            <span class="badge bg-primary me-1 mb-1">High Performance Computing</span>
             <span class="badge bg-primary me-1 mb-1">Package Dev</span>
             <span class="badge bg-primary me-1 mb-1">Unsupervised Learning</span>
             <span class="badge bg-primary me-1 mb-1">Clustering</span>
@@ -341,9 +501,9 @@
           <h4>Skills</h4>
           <div class="skills">
             <span class="badge bg-primary me-1 mb-1">Assembly (Nios II)</span>
-            <span class="badge bg-primary me-1 mb-1">Digital RTL Design</span>
             <span class="badge bg-primary me-1 mb-1">C</span>
             <span class="badge bg-primary me-1 mb-1">Verilog</span>
+            <span class="badge bg-primary me-1 mb-1">Digital RTL Design</span>
           </div>
         </div>
         <!-- Coursework 2: ECE244 -->
@@ -381,7 +541,7 @@
             <span class="badge bg-primary me-1 mb-1">Verilog</span>
             <span class="badge bg-primary me-1 mb-1">Quartus</span>
             <span class="badge bg-primary me-1 mb-1">Modelsim</span>
-            <span class="badge bg-primary me-1 mb-1">Digital Logic & Design</span>
+            <span class="badge bg-primary me-1 mb-1">Digital Logic</span>
           </div>
         </div>
         <!-- Coursework 4: ESC180 -->
@@ -432,11 +592,111 @@
   </footer>
 
   <!-- JavaScript -->
+  <!-- Update badges dynamically -->
+  <script>
+    const skillCategories = {
+      "Python": "lang",
+      "C": "lang",
+      "C++": "lang",
+      "Verilog": "lang",
+      "Assembly": "lang",
+      "Pytorch": "tool",
+      "Pandas": "tool",
+      "Numpy": "tool",
+      "Matplotlib": "tool",
+      "CMake": "tool",
+      "Quartus": "tool",
+      "Modelsim": "tool",
+      "Neural Networks": "concept",
+      "VAE/GAN": "concept",
+      "Digital Logic": "concept",
+      "Digital RTL Design": "concept",
+      "Compression Techniques": "concept",
+      "Unsupervised Learning": "concept",
+      "Clustering": "concept",
+      "Package Dev": "tool",
+      "Pretrained Models": "tool",
+      "Computer Vision": "concept",
+      "Image Classification": "concept",
+      "SciKit Learn": "tool",
+      "Scipy": "tool",
+      "High Performance Computing": "tool",
+      "OOP": "concept",
+      "Assembly (Nios II)": "lang",
+      "Data Structures": "concept",
+      "Time Complexity": "concept",
+      "Bitwise Optimization": "concept",
+      "PyPi": "tool",
+      "FPGA": "tool",
+      "Package Dev": "concept",
+      "Image Generation": "concept",
+      "Image Compression": "concept",
+      "Image Processing": "concept"
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const badges = document.querySelectorAll('.skills .badge');
+      badges.forEach(badge => {
+        const text = badge.textContent.trim();
+        const category = skillCategories[text];
+        if (category) {
+          badge.classList.remove('bg-primary');
+          badge.classList.add(`badge-${category}`);
+        }
+      });
+    });
+  </script>
+  <!-- Bootstrap JS, AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Script to get Date for footer -->
   <script>
     AOS.init({ duration: 800, easing: 'slide', once: true });
     document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Script to toggle skills dropdown -->
+  <script>
+    const allSkills = {
+      lang: ["Python", "C", "C++", "Verilog", "Assembly", "Assembly (Nios II)"],
+      tool: ["Pytorch", "Pandas", "Numpy", "Matplotlib", "CMake", "Quartus", "Modelsim", "SciKit Learn", "Scipy", "PyPi", "FPGA", "High Performance Computing"],
+      concept: ["Neural Networks", "VAE/GAN", "Digital Logic", "Digital RTL Design", "Compression Techniques", "Unsupervised Learning", "Clustering", "OOP", "Data Structures", "Time Complexity", "Bitwise Optimization", "Package Dev", "Image Generation", "Image Compression", "Image Processing", "Computer Vision", "Image Classification"]
+    };
+  
+    let currentVisible = null;
+  
+    function toggleSkills(category) {
+      const dropdown = document.getElementById('skillsDropdown');
+      const title = document.getElementById('skillsDropdownTitle');
+      const list = document.getElementById('skillsDropdownList');
+  
+      // Remove active classes from all buttons
+      document.querySelectorAll('.skill-toggle-btn').forEach(btn => btn.classList.remove('active'));
+  
+      if (currentVisible === category) {
+        dropdown.style.display = 'none';
+        currentVisible = null;
+      } else {
+        // Update title
+        title.textContent = category === 'lang' ? 'Languages' :
+                            category === 'tool' ? 'Tools / Packages' :
+                            'Concepts / Techniques';
+  
+        // Update badge list
+        list.innerHTML = '';
+        allSkills[category].forEach(skill => {
+          const badge = document.createElement('span');
+          badge.className = `badge badge-${category} me-2 mb-2`;
+          badge.textContent = skill;
+          list.appendChild(badge);
+        });
+  
+        dropdown.style.display = 'block';
+        document.getElementById(`btn-${category}`).classList.add('active');
+        currentVisible = category;
+      }
+    }
   </script>
 </body>
 </html>
