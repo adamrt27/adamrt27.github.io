@@ -1,0 +1,216 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background-color: #004200 !important;
+  }
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+  }
+  .navbar .nav-link:hover,
+  .navbar-brand:hover {
+    color: #ccc !important;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: url('https://boundless.utoronto.ca/wp-content/uploads/give/Give@2x.jpg') center center/cover no-repeat;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .hero-section .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 60px 0;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Portfolio Items */
+  .portfolio-item {
+    margin-bottom: 30px;
+    transition: transform 0.15s ease;
+    padding: 10px;
+    border-radius: 15px;
+  }
+  .portfolio-item:hover {
+    transform: scale(1.03) !important;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  #projects .portfolio-item img {
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+  .github-icon {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+  a:hover .github-icon {
+    filter: brightness(75%);
+  }
+  
+  /* Skills Badges */
+  .badge-lang {
+    background-color: #007bff !important;
+  }
+  .badge-tool {
+    background-color: #28a745 !important;
+  }
+  .badge-concept {
+    background-color: #fd7e14 !important;
+  }
+  .skills .badge {
+    font-size: 0.9rem;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+  }
+  a {
+    color: #228B22 !important;
+  }
+  a:hover {
+    color: #196619 !important;
+  }
+  
+  /* Skills Legend Styles */
+  .skills-legend-container {
+    margin-bottom: 2rem;
+  }
+  .skills-legend-container h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .skills-legend-container .badge {
+    font-size: 1rem;
+    padding: 0.6em 1.2em;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .skills-legend-container .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Dropdown Card Styles */
+  #skillsDropdown {
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  #skillsDropdown .card {
+    border: none;
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+  #skillsDropdown .card-body {
+    padding: 2rem;
+  }
+  #skillsDropdown h5 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+  #skillsDropdownList .badge {
+    font-size: 0.95rem;
+    padding: 0.5em 1.1em;
+    border-radius: 2rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Arrow Circle & Chevron */
+  .arrow-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+  }
+  .chevron {
+    width: 10px;
+    height: 10px;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .skill-toggle-btn.active .chevron {
+    transform: rotate(90deg);
+  }
+  
+  /* Category Buttons */
+  .btn-lang {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  .btn-lang:hover, .btn-lang.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .btn-tool {
+    border-color: #28a745;
+    color: #28a745;
+  }
+  .btn-tool:hover, .btn-tool.active {
+    background-color: #28a745;
+    color: #fff;
+  }
+  .btn-concept {
+    border-color: #fd7e14;
+    color: #fd7e14;
+  }
+  .btn-concept:hover, .btn-concept.active {
+    background-color: #fd7e14;
+    color: #fff;
+  }
+  
+  /* Skills Background */
+  .bg-skills {
+    background-color: #e9e9e9;
+    padding: 40px 0;
+  }
+  
+  /* Adjust spacing between sections */
+  #skills + #projects {
+    margin-top: -20px;
+  }
